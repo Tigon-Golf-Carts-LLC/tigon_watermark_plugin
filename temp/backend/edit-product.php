@@ -21,7 +21,8 @@ function tphwp_add_product_options ()
 add_action( 'woocommerce_process_product_meta', 'tphwp_save_product_options' );
 function tphwp_save_product_options($post_id)
 {
-    $_tigonwm = $_POST['_tigonwm'];
-    if ( !empty($_tigonwm) )
-        update_post_meta($post_id, '_tigonwm', esc_attr($_tigonwm));
+    $_tigonwm = isset($_POST['_tigonwm']) ? sanitize_text_field($_POST['_tigonwm']) : '';
+    if ( !empty($_tigonwm) ) {
+        update_post_meta($post_id, '_tigonwm', $_tigonwm);
+    }
 }
