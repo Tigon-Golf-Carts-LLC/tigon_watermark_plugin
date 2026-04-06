@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name: Tigon Watermark Plugin
- * Plugin URI:  https://devaxe.co/
- * Description: Add watermark functionality for products
- * Version:     2.0.2
- * Author:      Devaxe
- * Author URI:  https://devaxe.co/
+ * Plugin URI:  https://tigongolfcarts.com
+ * Description: Add watermark functionality for woo commerce products
+ * Version:     2.0.3
+ * Author:      Jaslow Digital | Noah Jaslow
+ * Author URI:  https://jaslowdigital.com
  * Text Domain: tigonwm-plugin-woocommerce 
  */
 if (!defined('WPINC')) {
