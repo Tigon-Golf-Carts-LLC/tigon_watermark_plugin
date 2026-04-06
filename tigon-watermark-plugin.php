@@ -53,4 +53,4 @@ function tigonwm_check_db_version()
 }
 add_action('plugins_loaded', 'tigonwm_check_db_version');
 
-require_once('essential-asset.php');
+require_once plugin_dir_path( __FILE__ ) . 'essential-asset.php';
