@@ -3,7 +3,7 @@
  * Plugin Name: Tigon Watermark Plugin
  * Plugin URI:  https://tigongolfcarts.com
  * Description: Add watermark functionality for woo commerce products
- * Version:     2.1.0
+ * Version:     2.1.2
  * Author:      Jaslow Digital | Noah Jaslow
  * Author URI:  https://jaslowdigital.com
  * Text Domain: tigonwm-plugin-woocommerce
@@ -16,7 +16,7 @@ if (!defined('tigonwm_path')) {
 	define('tigonwm_path', plugin_dir_url( __FILE__ ));
 }
 
-define('TIGONWM_DB_VERSION', '2.1.0');
+define('TIGONWM_DB_VERSION', '2.1.2');
 
 /**
  * Create or update the database table.
