@@ -1,10 +1,9 @@
 <?php
 function tigonwm_save_label_cart( $cart_item_data, $product_id, $variation_id, $quantity ) 
 {
-	if( ! empty( $_POST['_tigonwm_location'] ) ) 
+	if( isset( $_POST['_tigonwm_location'] ) && ! empty( $_POST['_tigonwm_location'] ) )
 	{
-		// Add the item data
-		$cart_item_data['_tigonwm_location'] = $_POST['_tigonwm_location'];
+		$cart_item_data['_tigonwm_location'] = sanitize_text_field( $_POST['_tigonwm_location'] );
 	}
 	return $cart_item_data;
 }
@@ -15,8 +14,9 @@ function tigonwm_display_label( $name, $cart_item, $cart_item_key )
 	if( isset( $cart_item['_tigonwm_location'] ) ) 
 	{
 		$image = wp_get_attachment_image_src( get_post_thumbnail_id( $cart_item['product_id'] ), 'single-post-thumbnail' );
-                              
-		$name .= '<div class="mini_thumb"><img src="'.$image[0].'"><div class="loc_label">'. $cart_item['_tigonwm_location'].'</div></div>';
+		$image_url = ! empty( $image[0] ) ? esc_url( $image[0] ) : '';
+
+		$name .= '<div class="mini_thumb"><img src="' . $image_url . '"><div class="loc_label">' . esc_html( $cart_item['_tigonwm_location'] ) . '</div></div>';
 	}
 	return $name;
 }

@@ -22,19 +22,20 @@ add_action( 'admin_enqueue_scripts', 'tigonwm_ENQUEUE_SCRIPTS' );
 add_action( 'wp_enqueue_scripts', 'tigonwm_ENQUEUE_SCRIPTS' );
 
 
-global $pagenow;
-if ( $pagenow == 'admin.php' && isset( $_GET['page'] ) && $_GET['page'] == 'tigonwm_dashboard' ) {
-    function VHWCH_BOOTSTRAP()
-    {
-    	wp_enqueue_style('tigonwm_MAIN_CSS_2', 'https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css');
-	    wp_enqueue_script('tigonwm_MAIN_JS_2', 'https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js');
-
-        wp_enqueue_style('VHWCH_BSCSS', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css' );
-        wp_enqueue_script('VHWCH_BSJS', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js');
-
-        wp_enqueue_script('jquery');
-        wp_enqueue_script('tigonwm_MAIN_JS', plugin_dir_url( __FILE__ ). '/assets/js/main.js');
-        wp_localize_script( 'tigonwm_MAIN_JS', 'olm_ajax_url', array( 'ajax_url' => admin_url( 'admin-ajax.php' )));
+function tigonwm_admin_enqueue_dashboard( $hook )
+{
+    if ( $hook !== 'toplevel_page_tigonwm_dashboard' ) {
+        return;
     }
-    add_action( 'admin_enqueue_scripts', 'VHWCH_BOOTSTRAP' );
+
+    wp_enqueue_style('tigonwm_MAIN_CSS_2', 'https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css');
+    wp_enqueue_script('tigonwm_MAIN_JS_2', 'https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js');
+
+    wp_enqueue_style('VHWCH_BSCSS', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css' );
+    wp_enqueue_script('VHWCH_BSJS', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js');
+
+    wp_enqueue_script('jquery');
+    wp_enqueue_script('tigonwm_MAIN_JS', plugin_dir_url( __FILE__ ). '/assets/js/main.js');
+    wp_localize_script( 'tigonwm_MAIN_JS', 'olm_ajax_url', array( 'ajax_url' => admin_url( 'admin-ajax.php' )));
 }
+add_action( 'admin_enqueue_scripts', 'tigonwm_admin_enqueue_dashboard' );
