@@ -1,0 +1,135 @@
+.woocommerce-product-gallery{
+  display: inline-block;
+  overflow: hidden;
+}
+.woocommerce-product-gallery .loc_label{
+  position: absolute;
+  width: 250px;
+  height: 40px;
+  line-height: 40px;
+  top: 40px;
+  right: -50px;
+  font-size: 14px;
+  font-weight: bold;
+  display: inline-block;
+  background: #0c4774;
+  color: #fff;
+  transform: rotate(45deg);
+  transform-origin: bottom;
+  text-align: center;
+  z-index: 10;
+}
+
+.product-block {
+    backface-visibility: hidden !important;
+    transform: translateZ(0) !important;
+}
+
+.mini_thumb{
+  width: 150px;
+  position: relative;
+  overflow: hidden;
+}
+.mini_thumb img{
+  width: 100%;
+}
+.loc_label{
+  position: absolute;
+  width: 250px;
+  height: 40px;
+  line-height: 40px;
+  top: 40px;
+  right: -50px;
+  font-size: 14px;
+  font-weight: bold;
+  display: inline-block;
+  background: #0c4774;
+  color: #fff;
+  transform: rotate(45deg);
+  transform-origin: bottom;
+  text-align: center;
+  z-index: 10;
+  text-transform: capitalize;
+}
+.loc_label_loop_wrapper{
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /*z-index: 10;*/
+  overflow: hidden;
+  height: 200px;
+}
+.loc_label_loop{
+  position: absolute;
+  width: 250px;
+  height: 30px;
+  line-height: 31px;
+  top: 20px;
+  right: -75px;
+  font-size: 11px;
+  font-weight: bold;
+  display: inline-block;
+  background: #0c4774;
+  color: #fff;
+  transform: rotate(45deg);
+  transform-origin: bottom;
+  text-align: center;
+  z-index: 20;
+  text-transform: capitalize;
+}
+
+
+/*dashboard design*/
+.toplevel_page_tigonwm_dashboard #wpcontent{
+  padding-left: 0 !important;
+}
+.tigonwm_section{
+  width: 100%;
+  padding: 20px;
+}
+.tigonwm_section h2{
+  font-size: 20px;
+  margin-bottom: 10px;  
+}
+.tigonwm_section h2 span{
+  position: relative;
+  top: 3px;
+  font-size: 28px;
+  color:#0c4774; 
+}
+.tigonwm_tablewrapper{
+  display: block;
+  width: 100%;
+  padding: 20px 0 20px;
+}
+.tigonwm_tablewrapper table{
+  margin: auto;
+}
+@media only screen and (max-width: 520px) {
+  .loc_label_loop {
+    position: absolute;
+    width: 198px;
+    height: 25px;
+    line-height: 25px;
+    top: 26px;
+    right: -53px;
+    font-size: 11px;
+  }
+}
+
+
+@media only screen and (max-width: 4200px) {
+  .loc_label_loop {
+    position: absolute;
+    width: 183px;
+    height: 22px;
+    line-height: 22px;
+    top: 21px;
+    right: -53px;
+    font-size: 10px;
+  }
+}
+
+
+
