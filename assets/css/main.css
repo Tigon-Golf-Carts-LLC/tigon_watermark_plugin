@@ -1,6 +1,8 @@
 .woocommerce-product-gallery{
   display: inline-block;
   overflow: hidden;
+  position: relative;
+  z-index: 1;
 }
 .woocommerce-product-gallery .loc_label{
   position: absolute;
@@ -17,7 +19,7 @@
   transform: rotate(45deg);
   transform-origin: bottom;
   text-align: center;
-  z-index: 10;
+  z-index: 2;
 }
 
 .product-block {
@@ -56,9 +58,10 @@
   position: absolute;
   top: 0;
   left: 0;
-  /*z-index: 10;*/
+  z-index: 1;
   overflow: hidden;
   height: 200px;
+  pointer-events: none;
 }
 .loc_label_loop{
   position: absolute;
@@ -75,8 +78,9 @@
   transform: rotate(45deg);
   transform-origin: bottom;
   text-align: center;
-  z-index: 20;
+  z-index: 2;
   text-transform: capitalize;
+  pointer-events: none;
 }
 
 
@@ -106,9 +110,14 @@
 .tigonwm_tablewrapper table{
   margin: auto;
 }
+/* Ensure WooCommerce product list items create isolated stacking contexts */
+ul.products li.product {
+  position: relative;
+  z-index: 1;
+}
+
 @media only screen and (max-width: 520px) {
   .loc_label_loop {
-    position: absolute;
     width: 198px;
     height: 25px;
     line-height: 25px;
@@ -118,10 +127,8 @@
   }
 }
 
-
 @media only screen and (max-width: 4200px) {
   .loc_label_loop {
-    position: absolute;
     width: 183px;
     height: 22px;
     line-height: 22px;
