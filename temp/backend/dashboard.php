@@ -37,7 +37,7 @@ function tigonwm_dashboard_temp()
 			<table class="table table-striped">
 				<thead>
 			    	<tr>
-			    		<th scope="col">#</th>
+			    		<th scope="col">ID</th>
 			    		<th scope="col">Watermark</th>
 						<th scope="col">Action</th>
 					</tr>
@@ -52,7 +52,7 @@ function tigonwm_dashboard_temp()
 					{
 					?>
 						<tr>
-							<th scope="row">1</th>
+							<th scope="row"><?=$wm->id?></th>
 							<td><?=$wm->watermark?></td>
 							<td>
 								<div class="modal fade" id="tigonwm_edit_<?=$wm->id?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
