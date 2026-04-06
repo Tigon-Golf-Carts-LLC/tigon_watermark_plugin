@@ -14,15 +14,6 @@ function after_li_started ()
 			$watermark_text
 		));
 		$watermark_id = $watermark_row ? intval($watermark_row->id) : 0;
-		?>
-		<style type="text/css">
-
-				.product-block {
-				    backface-visibility: hidden !important;
-				    transform: translateZ(0) !important;
-				}
-		</style>
-		<?php
-    	echo '<span class="loc_label_loop_wrapper" data-watermark-id="' . esc_attr($watermark_id) . '" id="tigonwm-' . esc_attr($watermark_id) . '"><span class="loc_label_loop">' . esc_html($watermark_text) . '</span></span>';
+		echo '<span class="loc_label_loop_wrapper" data-watermark-id="' . esc_attr($watermark_id) . '" id="tigonwm-' . esc_attr($watermark_id) . '"><span class="loc_label_loop">' . esc_html($watermark_text) . '</span></span>';
 	}
 }
